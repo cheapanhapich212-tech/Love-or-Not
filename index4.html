@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="km">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style2.css">
+    <title>ហាងលក់សម្លៀកបំពាក់</title>
+    <style>
+        body { font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; margin: 0; padding: 0; background-color: #f4f4f4; }
+        header { background: #333; color: #fff; padding: 1rem 0; text-align: center; }
+        nav { background: #444; color: #fff; padding: 0.5rem; text-align: center; }
+        .container { display: flex; flex-wrap: wrap; justify-content: space-around; padding: 20px; }
+        .product-card { background: #fff; border: 1px solid #ddd; border-radius: 5px; width: 250px; margin: 15px; padding: 15px; text-align: center; }
+        .product-card img { max-width: 100%; height: auto; border-radius: 3px; }
+        .price { color: #e91e63; font-size: 1.25rem; font-weight: bold; margin: 10px 0; }
+        button { background: #28a745; color: white; border: none; padding: 10px 20px; border-radius: 3px; cursor: pointer; }
+        button:hover { background: #218838; }
+        #cart { background: #fff; padding: 20px; margin: 20px; border-top: 2px solid #333; }
+    </style>
+</head>
+<body>
+
+<header>
+    <h1>ហាងលក់សម្លៀកបំពាក់ និងស្បែកជើង</h1>
+    <div class="parent-container">
+        <br><button onclick="window.location.href='index2.html'" class="button">ចូលគណនី</button><br>
+    </div>
+</header>
+<div class="container" id="product-list">
+    <div class="product-card">
+        <img src="https://via.placeholder.com/200" alt="អាវយឺត">
+        <h3>អាវយឺតនារី</h3>
+        <p class="price">$1.00</p>
+        <button onclick="addToCart('អាវយឺតនារី', 1.00)">បន្ថែមទៅការទិញ</button>
+    </div>
+    <div class="product-card">
+        <img src="https://via.placeholder.com/200" alt="អាវយឺត">
+        <h3>អាវកវែងទាន់សម័យ</h3>
+        <p class="price">$5.00</p>
+        <button onclick="addToCart('អាវកវែងទាន់សម័យ', 5.00)">បន្ថែមទៅការទិញ</button>
+    </div>
+    <div class="product-card">
+        <img src="https://via.placeholder.com/200" alt="អាវយឺត">
+        <h3>អាវសបុរស</h3>
+        <p class="price">$7.00</p>
+        <button onclick="addToCart('អាវសបុរស', 7.00)">បន្ថែមទៅការទិញ</button>
+    </div>
+    <div class="product-card">
+        <img src="https://via.placeholder.com/200" alt="អាវយឺត">
+        <h3>អាវ​ Scorpion</h3>
+        <p class="price">$15.00</p>
+        <button onclick="addToCart('អាវ​ Scorpion', 15.00)">បន្ថែមទៅការទិញ</button>
+    </div>
+    <div class="product-card">
+        <img src="https://via.placeholder.com/200" alt="អាវយឺត">
+        <h3>អាវដៃវែងសម័យ</h3>
+        <p class="price">$5.00</p>
+        <button onclick="addToCart('អាវដៃវែងសម័យ', 5.00)">បន្ថែមទៅការទិញ</button>
+    </div>
+    <div class="product-card">
+        <img src="https://via.placeholder.com/200" alt="អាវយឺត">
+        <h3>អាវយឺតទាន់សម័យ</h3>
+        <p class="price">$15.00</p>
+        <button onclick="addToCart('អាវយឺតទាន់សម័យ', 15.00)">បន្ថែមទៅការទិញ</button>
+    </div>
+    <div class="product-card">
+        <img src="https://via.placeholder.com/200" alt="ខោខូវប៊ូយ">
+        <h3>ខោខូវប៊ូយ</h3>
+        <p class="price">$8.00</p>
+        <button onclick="addToCart('ខោខូវប៊ូយ', 8.00)">បន្ថែមទៅការទិញ</button>
+    </div>
+    <div class="product-card">
+        <img src="https://via.placeholder.com/200" alt="ស្បែកជើងប៉ាតា">
+        <h3>ស្បែកជើងប៉ាតា</h3>
+        <p class="price">$5.00</p>
+        <button onclick="addToCart('ស្បែកជើងប៉ាតា', 5.00)">បន្ថែមទៅការទិញ</button>
+    </div>
+</div>
+
+<div id="cart">
+    <h2>កន្ត្រកទំនិញរបស់អ្នក</h2>
+    <ul id="cart-items"><li>គ្មានទំនិញក្នុងកន្ត្រក</li></ul>
+    <p>សរុប: $<span id="total-price">0.00</span></p>
+    <button class="button2"><a href="photo_2026-11-05_14-12-20.jpg" target="_blank" width="100" height="50" class="button2">ទិញឥឡូវនេះ</a></button>
+
+</div>
+<div class="footer">
+<div class="footer-content">
+    <div class="footer-section about">
+        <h3>អំពីយើង</h3>
+        <p>ហាងលក់សម្លៀកបំពាក់ និងស្បែកជើង គឺជាហាងលក់សម្លៀកបំពាក់ និងស្បែកជើងដែលមានគុណភាពខ្ពស់។ យើងផ្តល់ជូននូវផលិតផលថ្មីៗ និងទាន់សម័យសម្រាប់អតិថិជនរបស់យើង។</p>
+    <p>© 2024 ហាងលក់សម្លៀកបំពាក់ និងស្បែកជើង. រក្សាសិទ្ធិគ្រប់យ៉ាង.</p>
+    <div class="footer-section links">
+        <h3>តំណភ្ជាប់រហ័ស</h3>
+        <ul>
+            <li><a href="#">ទំព័រដើម</a></li>
+            <li><a href="#">ផលិតផល</a></li>
+            <li><a href="#">ទំនាក់ទំនង</a></li>
+            <li><a href="#">អំពីយើង</a></li>
+        </ul>
+</div="footer-section contact">
+        <h3>ទំនាក់ទំនង</h3>
+        <p>អាសយដ្ឋាន: ផ្លូវលេខ 123, ភ្នំពេញ, កម្ពុជា</p>
+        <p>ទូរស័ព្ទ: +855 12 345 678</p>
+        <p></p>អ៊ីមែល: info@fashionstore.com</p>
+    </div>
+</div>
+<data class="footer-bottom">
+    <p>© 2024 ហាងលក់សម្លៀកបំពាក់ និងស្បែកជើង. រក្សាសិទ្ធិគ្រប់យ៉ាង.</p>
+    <div class="footer-social">
+        <a href="#"><img src="Facebook_logo_(square).png" alt="Facebook" width="30" height="30"></a>
+        <a href="#"><img src="Twitter.png" alt="Twitter" width="30" height="30"></a>
+        <a href="#"><img src="Instagram_icon.png.webp" alt="Instagram" width="30" height="30"></a>
+        
+
+    </div>
+<script>
+    let cart = [];
+    let total = 0;
+
+    function addToCart(productName, price) {
+        cart.push(productName);
+        total += price;
+        updateCartUI();
+    }
+
+    function updateCartUI() {
+        const cartList = document.getElementById('cart-items');
+        cartList.innerHTML = '';
+        cart.forEach(item => {
+            let li = document.createElement('li');
+            li.textContent = item;
+            cartList.appendChild(li);
+        });
+        document.getElementById('total-price').textContent = total.toFixed(2);
+        
+    }
+     const buyButton = document.querySelector('button a');
+    buyButton.addEventListener('click', function(event) {
+        if (cart.length === 0) {
+            event.preventDefault();
+            alert('សូមបន្ថែមទំនិញមួយចំនួនទៅកន្ត្រករបស់អ្នកមុនពេលទិញ។');
+        }
+    });
+    
+    const clearCartButton = document.createElement('button');
+    clearCartButton.textContent = 'សម្អាតកន្ត្រក';
+    clearCartButton.addEventListener('click', function() {
+        cart = [];
+        total = 0;
+        updateCartUI();
+    });
+    document.getElementById('cart').appendChild(clearCartButton);
+</script>
+<div class="clearCartButton ">
+</body>
+</html>
